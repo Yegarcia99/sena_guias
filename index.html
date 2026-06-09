@@ -1,0 +1,671 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guias | Sistema de Seguimiento de Aprendices SENA</title>
+  <meta name="description" content="Guias de usuario y guia tecnica del Sistema de Seguimiento de Aprendices SENA.">
+  <link rel="icon" href="assets/brand/icon-192.png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#inicio" aria-label="Inicio">
+      <img src="assets/brand/logoSena.png" alt="Logo SENA">
+      <span>
+        <strong>SENA</strong>
+        <small>Seguimiento Aprendices</small>
+      </span>
+    </a>
+    <nav class="nav" aria-label="Navegacion principal">
+      <a href="#usuarios">Usuarios</a>
+      <a href="#tecnica">Tecnica</a>
+      <a href="#videos">Videos</a>
+    </nav>
+  </header>
+
+  <main id="inicio">
+    <section class="hero section">
+      <div class="hero-copy">
+        <p class="eyebrow">Documentacion del proyecto</p>
+        <h1>Sistema de Seguimiento de Aprendices</h1>
+        <p class="lead">Manual de consulta del sistema academico y disciplinario desarrollado para el SENA Regional Caldas.</p>
+        <div class="hero-actions">
+          <a class="button primary" href="#usuarios">Ver guia de usuarios</a>
+          <a class="button ghost" href="#tecnica">Ver guia tecnica</a>
+        </div>
+      </div>
+
+      <aside class="hero-panel" aria-label="Resumen del sistema">
+        <div class="panel-header">
+          <span class="status-dot"></span>
+          <strong>Guia del sistema</strong>
+        </div>
+        <div class="flow-preview">
+          <div>
+            <span>01</span>
+            <strong>Reporte</strong>
+            <small>Academico o disciplinario</small>
+          </div>
+          <div>
+            <span>02</span>
+            <strong>Notificacion</strong>
+            <small>Aprendiz, gestor y coordinacion</small>
+          </div>
+          <div>
+            <span>03</span>
+            <strong>Seguimiento</strong>
+            <small>Evidencias, firmas e instancias</small>
+          </div>
+          <div>
+            <span>04</span>
+            <strong>Decision</strong>
+            <small>Cierre, correccion o comite</small>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <section class="section metrics" aria-label="Modulos destacados">
+      <article>
+        <strong>2</strong>
+        <span>Entornos</span>
+        <small>Produccion y QA separados.</small>
+      </article>
+      <article>
+        <strong>5</strong>
+        <span>Roles</span>
+        <small>Administrador, instructor, aprendiz, gestor y coordinador.</small>
+      </article>
+      <article>
+        <strong>2</strong>
+        <span>Procesos</span>
+        <small>Seguimiento academico y disciplinario.</small>
+      </article>
+      <article>
+        <strong>3</strong>
+        <span>Accesibilidad</span>
+        <small>Lupa, voz por cursor y modo oscuro.</small>
+      </article>
+    </section>
+
+    <section class="section quick-guide" aria-label="Ruta rapida del sistema">
+      <div class="section-heading">
+        <p class="eyebrow">Ruta rapida</p>
+        <h2>Antes de iniciar</h2>
+        <p>El sistema permite registrar casos academicos y disciplinarios, notificar a los usuarios involucrados, recibir evidencias y dejar trazabilidad del proceso.</p>
+      </div>
+      <div class="quick-grid">
+        <article>
+          <span>01</span>
+          <h3>Identificar el caso</h3>
+          <p>El caso puede ser academico, por una competencia no aprobada, o disciplinario, por una falta o reincidencia.</p>
+        </article>
+        <article>
+          <span>02</span>
+          <h3>Asignar responsables</h3>
+          <p>El sistema relaciona instructor, aprendiz, gestor de grupo y coordinador segun el proceso y la ficha.</p>
+        </article>
+        <article>
+          <span>03</span>
+          <h3>Notificar y firmar</h3>
+          <p>El aprendiz recibe el caso, firma recibido y queda constancia de que conoce el pendiente o proceso.</p>
+        </article>
+        <article>
+          <span>04</span>
+          <h3>Subir evidencia</h3>
+          <p>El aprendiz carga el trabajo, soporte, descargo o evidencia solicitada antes de la fecha limite.</p>
+        </article>
+        <article>
+          <span>05</span>
+          <h3>Revisar y decidir</h3>
+          <p>El responsable aprueba, solicita correccion, rechaza, escala a instancia o remite a comite segun el caso.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section split" id="usuarios">
+      <div class="section-heading">
+        <p class="eyebrow">Guia para usuarios</p>
+        <h2>Como se usa el sistema por rol</h2>
+        <p>Seleccione un rol para consultar sus funciones, los pasos que debe seguir y las pantallas principales que utiliza.</p>
+      </div>
+
+      <div class="guide-tools">
+        <div class="search-box">
+          <span aria-hidden="true">Q</span>
+          <input id="guideSearch" type="search" placeholder="Buscar en las guias..." aria-label="Buscar en las guias">
+        </div>
+        <div class="role-tabs" role="tablist" aria-label="Roles del sistema">
+          <button class="active" type="button" data-role-target="admin">Administrador</button>
+          <button type="button" data-role-target="instructor">Instructor</button>
+          <button type="button" data-role-target="aprendiz">Aprendiz</button>
+          <button type="button" data-role-target="gestor">Gestor</button>
+          <button type="button" data-role-target="coordinador">Coordinador</button>
+        </div>
+      </div>
+
+      <div class="role-content">
+        <article class="role-guide active" id="role-admin" data-guide-card>
+          <div class="role-badge">AD</div>
+          <div>
+            <h3>Administrador</h3>
+            <p>Controla usuarios, entornos, parametros generales, reportes, auditoria y soporte tecnico del sistema.</p>
+            <ol>
+              <li>Ingresa al sistema y confirma si esta en Produccion o QA.</li>
+              <li>Crea usuarios de prueba o reales desde Gestion de Usuarios.</li>
+              <li>Asigna roles, fichas, gestores, instructores y coordinadores.</li>
+              <li>Revisa auditoria, reportes y respaldos antes de cambios importantes.</li>
+              <li>Usa QA para ensayar cambios sin tocar datos reales.</li>
+            </ol>
+            <div class="role-details">
+              <h4>Gestion de usuarios</h4>
+              <p>Desde este modulo el administrador crea y controla las cuentas del sistema. Puede registrar gestores y coordinadores, restablecer contrasenas, desactivar usuarios y eliminar cuentas administrativas cuando no tengan procesos asociados.</p>
+              <h4>Buenas practicas</h4>
+              <ul>
+                <li>Crear o probar usuarios primero en QA cuando sea una demostracion.</li>
+                <li>Revisar auditoria despues de cambios importantes.</li>
+                <li>Evitar eliminar usuarios con historial; en esos casos es mejor desactivarlos.</li>
+              </ul>
+              <p class="expected-result"><strong>Al terminar:</strong> los usuarios quedan organizados, con roles definidos y registro de los cambios realizados.</p>
+            </div>
+          </div>
+          <div class="role-gallery" aria-label="Capturas del administrador">
+            <figure class="role-shot">
+              <img src="assets/screenshots/admin-01-dashboard.png" alt="Dashboard del administrador">
+              <figcaption>Dashboard general del administrador.</figcaption>
+            </figure>
+            <figure class="role-shot">
+              <img src="assets/screenshots/admin-02-usuarios.png" alt="Gestion de usuarios del administrador">
+              <figcaption>Gestion de usuarios y roles.</figcaption>
+            </figure>
+            <figure class="role-shot">
+              <img src="assets/screenshots/admin-03-auditoria.png" alt="Auditoria del sistema">
+              <figcaption>Auditoria y trazabilidad de cambios.</figcaption>
+            </figure>
+          </div>
+        </article>
+
+        <article class="role-guide" id="role-instructor" data-guide-card>
+          <div class="role-badge">IN</div>
+          <div>
+            <h3>Instructor</h3>
+            <p>Registra novedades academicas o disciplinarias y revisa las evidencias enviadas por el aprendiz.</p>
+            <ol>
+              <li>Reporta una competencia no aprobada o un hecho disciplinario.</li>
+              <li>Define la accion remedial, tipo de entrega, evaluacion y fecha limite.</li>
+              <li>El aprendiz y su gestor reciben la notificacion correspondiente.</li>
+              <li>Revisa la evidencia, la descarga si aplica y decide aprobar, solicitar correccion o rechazar.</li>
+              <li>El sistema conserva trazabilidad de firmas, respuestas y cambios.</li>
+            </ol>
+            <div class="role-details">
+              <h4>Seguimiento academico</h4>
+              <p>El instructor reporta cuando un aprendiz no aprueba una competencia y define una accion remedial con fecha limite, tipo de entrega y, si aplica, evaluacion, exposicion o trabajo escrito.</p>
+              <h4>Revision de evidencias</h4>
+              <ul>
+                <li>Verificar que el aprendiz haya firmado recibido.</li>
+                <li>Descargar o revisar el soporte enviado.</li>
+                <li>Aprobar si cumple, solicitar correccion si hay fallas o rechazar si no responde al compromiso.</li>
+              </ul>
+              <p class="expected-result"><strong>Al terminar:</strong> el caso queda registrado y el aprendiz conoce que debe entregar, corregir o presentar.</p>
+            </div>
+          </div>
+          <div class="role-gallery" aria-label="Capturas del instructor">
+            <figure class="role-shot">
+              <img src="assets/screenshots/instructor-01-dashboard.png" alt="Dashboard del instructor">
+              <figcaption>Dashboard del instructor y acceso a sus modulos.</figcaption>
+            </figure>
+          </div>
+        </article>
+
+        <article class="role-guide" id="role-aprendiz" data-guide-card>
+          <div class="role-badge">AP</div>
+          <div>
+            <h3>Aprendiz</h3>
+            <p>Consulta pendientes, firma recibido, sube evidencias y responde dentro de los tiempos establecidos.</p>
+            <ol>
+              <li>Ingresa a Pendientes para ver acciones academicas o disciplinarias.</li>
+              <li>Firma el recibido digital del caso asignado.</li>
+              <li>Lee la accion solicitada, fecha limite y tipo de entrega.</li>
+              <li>Sube evidencia o respuesta desde el pendiente correspondiente.</li>
+              <li>Atiende correcciones antes de pasar a nuevas instancias.</li>
+            </ol>
+            <div class="role-details">
+              <h4>Atencion de pendientes</h4>
+              <p>El aprendiz entra al sistema para revisar sus compromisos academicos o disciplinarios. Cada pendiente muestra descripcion, fecha limite, estado, firma de recibido y opcion para subir evidencia.</p>
+              <h4>Firma y evidencia</h4>
+              <ul>
+                <li>Firmar recibido confirma que el aprendiz fue notificado.</li>
+                <li>La evidencia debe subirse antes de la fecha limite.</li>
+                <li>Si el instructor solicita correccion, el aprendiz debe responder nuevamente.</li>
+              </ul>
+              <p class="expected-result"><strong>Al terminar:</strong> el aprendiz deja evidencia de su respuesta y el responsable puede revisar el cumplimiento.</p>
+            </div>
+          </div>
+          <div class="role-gallery" aria-label="Capturas del aprendiz">
+            <figure class="role-shot">
+              <img src="assets/screenshots/aprendiz-00-perfil.png" alt="Perfil del aprendiz">
+              <figcaption>Perfil del aprendiz y datos de la cuenta.</figcaption>
+            </figure>
+            <figure class="role-shot">
+              <img src="assets/screenshots/aprendiz-01-pendientes.png" alt="Pendientes del aprendiz">
+              <figcaption>Consulta de pendientes asignados.</figcaption>
+            </figure>
+            <figure class="role-shot">
+              <img src="assets/screenshots/aprendiz-02-firma-recibido.png" alt="Firma de recibido del aprendiz">
+              <figcaption>Firma digital de recibido del caso.</figcaption>
+            </figure>
+          </div>
+        </article>
+
+        <article class="role-guide" id="role-gestor" data-guide-card>
+          <div class="role-badge">GE</div>
+          <div>
+            <h3>Gestor de grupo</h3>
+            <p>Acompana los casos del aprendiz, revisa alertas y activa instancias cuando el proceso lo requiere.</p>
+            <ol>
+              <li>Recibe notificaciones de casos academicos o disciplinarios de sus aprendices.</li>
+              <li>Consulta expediente, pendientes, evidencias y trazabilidad.</li>
+              <li>Gestiona primera instancia cuando el aprendiz no cumple los compromisos.</li>
+              <li>Escala a segunda instancia o comite cuando el caso lo requiere.</li>
+              <li>Coordina con instructores y coordinacion para dejar decisiones registradas.</li>
+            </ol>
+            <div class="role-details">
+              <h4>Acompanamiento del grupo</h4>
+              <p>El gestor revisa los aprendices de su ficha, identifica pendientes sin respuesta y acompana los casos que ya requieren primera instancia o seguimiento mas cercano.</p>
+              <h4>Escalamiento</h4>
+              <ul>
+                <li>Primera instancia cuando el aprendiz no cumple el pendiente academico.</li>
+                <li>Seguimiento disciplinario cuando hay faltas registradas o reincidencias.</li>
+                <li>Remision a coordinacion cuando el caso supera la gestion del grupo.</li>
+              </ul>
+              <p class="expected-result"><strong>Al terminar:</strong> el caso queda con seguimiento, responsable asignado y decisiones registradas.</p>
+            </div>
+          </div>
+          <div class="role-gallery" aria-label="Capturas del gestor">
+            <figure class="role-shot">
+              <img src="assets/screenshots/gestor-02-instancias.png" alt="Instancias gestionadas por el gestor">
+              <figcaption>Revision de instancias del aprendiz.</figcaption>
+            </figure>
+            <figure class="role-shot">
+              <img src="assets/screenshots/gestor-03-seguimiento.png" alt="Seguimiento realizado por el gestor">
+              <figcaption>Seguimiento academico y disciplinario.</figcaption>
+            </figure>
+          </div>
+        </article>
+
+        <article class="role-guide" id="role-coordinador" data-guide-card>
+          <div class="role-badge">CO</div>
+          <div>
+            <h3>Coordinador</h3>
+            <p>Participa en decisiones de instancia, valida casos criticos y acompana el paso a comite.</p>
+            <ol>
+              <li>Revisa casos escalados por el gestor de grupo.</li>
+              <li>Consulta historial academico y disciplinario antes de decidir.</li>
+              <li>Registra decisiones de primera o segunda instancia.</li>
+              <li>Notifica al aprendiz cuando entra en proceso formal.</li>
+              <li>Habilita el paso a comite cuando ya se agotaron las etapas previas.</li>
+            </ol>
+            <div class="role-details">
+              <h4>Decision institucional</h4>
+              <p>El coordinador acompana los casos que requieren decision formal, revisa el historial del aprendiz y valida si corresponde continuar en segunda instancia o pasar a comite.</p>
+              <h4>Aspectos que revisa</h4>
+              <ul>
+                <li>Historial academico y disciplinario del aprendiz.</li>
+                <li>Firmas de recibido, evidencias, correcciones y fechas limite.</li>
+                <li>Reincidencias, faltas graves o incumplimientos acumulados.</li>
+              </ul>
+              <p class="expected-result"><strong>Al terminar:</strong> la decision queda soportada con historial, evidencias y registro del proceso.</p>
+            </div>
+          </div>
+          <div class="role-gallery" aria-label="Capturas del coordinador">
+            <figure class="role-shot">
+              <img src="assets/screenshots/coordinador-02-comite.png" alt="Comite revisado por el coordinador">
+              <figcaption>Revision de comite y decisiones del caso.</figcaption>
+            </figure>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section guide-divider" aria-label="Separador guia tecnica">
+      <div>
+        <p class="eyebrow">Guia independiente</p>
+        <h2>Documentacion tecnica</h2>
+      </div>
+      <p>Esta guia resume la instalacion, estructura, seguridad, base de datos y mantenimiento del sistema.</p>
+    </section>
+
+    <section class="section technical-section" id="tecnica">
+      <div class="section-heading">
+        <p class="eyebrow">Guia tecnica</p>
+        <h2>Tecnologias y estructura del proyecto</h2>
+        <p>Informacion de apoyo para instalar, revisar y mantener el proyecto.</p>
+      </div>
+
+      <div class="tech-grid">
+        <article data-guide-card>
+          <span class="tech-icon">PHP</span>
+          <h3>Backend</h3>
+          <p>El sistema usa PHP y PDO para conectarse a MySQL/MariaDB. Las pantallas se organizan por modulos y reutilizan archivos comunes.</p>
+        </article>
+        <article data-guide-card>
+          <span class="tech-icon">SQL</span>
+          <h3>Base de datos</h3>
+          <p>MySQL/MariaDB guarda usuarios, aprendices, fichas, competencias, acciones remediales, casos disciplinarios, notificaciones, auditoria y firmas.</p>
+        </article>
+        <article data-guide-card>
+          <span class="tech-icon">UI</span>
+          <h3>Interfaz</h3>
+          <p>HTML, CSS y JavaScript se usan para las pantallas, formularios, modales, alertas, modo oscuro, lupa y voz por cursor.</p>
+        </article>
+        <article data-guide-card>
+          <span class="tech-icon">QA</span>
+          <h3>Entornos</h3>
+          <p>Produccion y QA trabajan por separado. QA se usa para pruebas, usuarios de demostracion y simulacion de roles.</p>
+        </article>
+        <article data-guide-card>
+          <span class="tech-icon">WEB</span>
+          <h3>Publicacion</h3>
+          <p>Esta guia puede publicarse en Vercel. El sistema principal requiere XAMPP o un hosting con PHP y MySQL.</p>
+        </article>
+      </div>
+
+      <div class="architecture">
+        <div>
+          <h3>Carpetas principales</h3>
+          <ul class="check-list">
+            <li><strong>config:</strong> conexion y configuraciones base.</li>
+            <li><strong>includes:</strong> autenticacion, layout, notificaciones, auditoria y componentes comunes.</li>
+            <li><strong>pages:</strong> pantallas principales del sistema por modulo.</li>
+            <li><strong>assets:</strong> estilos, JavaScript, imagenes e iconos.</li>
+            <li><strong>uploads:</strong> soportes, evidencias y archivos cargados por usuarios.</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Seguridad y control</h3>
+          <ul class="check-list">
+            <li>Sesiones y permisos por rol.</li>
+            <li>Contrasenas protegidas con hash.</li>
+            <li>Recuperacion segura de contrasena.</li>
+            <li>Auditoria de cambios relevantes.</li>
+            <li>Firmas digitales de recibido por parte del aprendiz.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="code-tree-panel">
+        <div class="code-tree-copy">
+          <h3>Arbol general del codigo</h3>
+          <p>Estructura principal del proyecto. Cada carpeta cumple una funcion dentro del sistema.</p>
+        </div>
+        <pre class="code-tree" aria-label="Arbol de carpetas del proyecto"><code>sena_aprendices/
+|-- index.php                       # Login principal
+|-- logout.php                      # Cierre de sesion
+|-- recuperar_password.php          # Solicitud para recuperar contrasena
+|-- restablecer_password.php        # Cambio seguro de contrasena
+|-- manifest.json                   # Configuracion PWA
+|-- sw.js                           # Service worker
+|-- sena_aprendices.sql             # Base de datos inicial
+|-- actualizacion_expediente.sql    # Migraciones del expediente
+|-- migracion_rol_aprendiz.sql      # Migracion de rol aprendiz
+|
+|-- config/
+|   `-- database.php                # Conexion a MySQL/MariaDB
+|
+|-- includes/
+|   |-- auth.php                    # Sesiones, login y roles
+|   |-- header.php                  # Layout superior y menu
+|   |-- footer.php                  # Cierre visual del sistema
+|   |-- notificaciones.php          # Alertas internas y correos
+|   |-- password_reset.php          # Recuperacion segura de contrasena
+|   |-- acuse_recibido.php          # Firma digital de recibido
+|   |-- expediente_schema.php       # Validaciones/migraciones del expediente
+|   `-- mail_config.php             # Configuracion de correo
+|
+|-- pages/
+|   |-- dashboard.php               # Resumen general por rol
+|   |-- aprendices.php              # Registro y consulta de aprendices
+|   |-- instructores.php            # Gestion de instructores
+|   |-- gestion_usuarios.php        # Administracion de cuentas
+|   |-- pendientes.php              # Reportes academicos
+|   |-- acciones.php                # Acciones remediales
+|   |-- mis_pendientes.php          # Vista del aprendiz
+|   |-- seguimiento_academico.php   # Flujo academico
+|   |-- disciplinario.php           # Seguimiento disciplinario
+|   |-- asistente_caso.php          # Asistente academico
+|   |-- asistente_disciplinario.php # Asistente disciplinario
+|   |-- expediente.php              # Historial integrado
+|   |-- expediente_pdf.php          # Exportacion del expediente
+|   |-- comite.php                  # Comite academico/disciplinario
+|   |-- auditoria.php               # Historial de cambios
+|   |-- reportes.php                # Reportes administrativos
+|   |-- seleccionar_entorno.php     # Produccion / QA
+|   |-- simular_usuario_qa.php      # Ver sistema como otro rol en QA
+|   `-- subir_foto.php              # Foto obligatoria de usuario
+|
+|-- ajax/                           # Peticiones internas sin recargar pagina
+|-- assets/                         # CSS, JavaScript e imagenes de interfaz
+|-- image/                          # Logos e iconos institucionales
+|-- libs/                           # Librerias externas como PHPMailer
+`-- uploads/                        # Evidencias, soportes y fotos cargadas</code></pre>
+      </div>
+
+      <div class="technical-manual">
+        <article>
+          <h3>Requisitos para ejecutar el sistema</h3>
+          <ul class="check-list">
+            <li>XAMPP con Apache y MySQL/MariaDB activos.</li>
+            <li>PHP 8 o version compatible con PDO.</li>
+            <li>Navegador moderno para usar modales, voz, lupa y modo oscuro.</li>
+            <li>Base de datos importada desde phpMyAdmin o consola MySQL.</li>
+          </ul>
+        </article>
+
+        <article>
+          <h3>Instalacion local recomendada</h3>
+          <ol class="number-list">
+            <li>Copiar el proyecto en `C:\xampp\htdocs\sena_aprendices`.</li>
+            <li>Crear la base de datos principal en MySQL.</li>
+            <li>Importar el archivo SQL actualizado.</li>
+            <li>Revisar `config/database.php` y confirmar nombre de base de datos, usuario y contrasena.</li>
+            <li>Entrar desde `http://localhost/sena_aprendices/`.</li>
+          </ol>
+        </article>
+
+        <article>
+          <h3>Produccion y QA</h3>
+          <p>El proyecto maneja dos entornos. Produccion conserva la informacion real. QA se usa para pruebas y demostraciones.</p>
+          <ul class="check-list">
+            <li>Produccion: carpeta `sena_aprendices` y base principal.</li>
+            <li>QA: carpeta `sena_aprendices_qa` y base de datos independiente.</li>
+            <li>El administrador puede identificar el entorno y cambiar entre QA y Produccion.</li>
+          </ul>
+        </article>
+
+        <article>
+          <h3>Modulos funcionales</h3>
+          <ul class="check-list">
+            <li>Gestion academica: pendientes, acciones remediales, evidencias, correcciones e instancias.</li>
+            <li>Gestion disciplinaria: hechos, faltas, reincidencias, seguimiento, descargos y comite.</li>
+            <li>Expediente: historial integrado del aprendiz.</li>
+            <li>Notificaciones: alertas internas para aprendiz, instructor, gestor y coordinador.</li>
+            <li>Accesibilidad: lupa, voz por cursor y modo oscuro.</li>
+          </ul>
+        </article>
+
+        <article>
+          <h3>Seguridad aplicada</h3>
+          <ul class="check-list">
+            <li>Acceso controlado por roles.</li>
+            <li>Contrasenas almacenadas con hash.</li>
+            <li>Recuperacion de contrasena con token temporal y codigo.</li>
+            <li>Auditoria de acciones relevantes.</li>
+            <li>Firma digital de recibido para dejar constancia de notificacion.</li>
+          </ul>
+        </article>
+
+        <article>
+          <h3>Mantenimiento y respaldo</h3>
+          <p>Antes de realizar cambios importantes se debe copiar la carpeta del sistema y exportar la base de datos. Los cambios se prueban primero en QA.</p>
+          <ul class="check-list">
+            <li>Exportar SQL desde phpMyAdmin.</li>
+            <li>Guardar copia de `uploads` para no perder evidencias.</li>
+            <li>Revisar auditoria despues de eliminar, desactivar o cambiar usuarios.</li>
+            <li>Validar cada rol antes de entregar una version final.</li>
+          </ul>
+        </article>
+      </div>
+
+      <div class="db-guide">
+        <div class="section-heading compact-heading">
+          <p class="eyebrow">Base de datos</p>
+          <h2>Informacion guardada en la base de datos</h2>
+          <p>La base de datos guarda la informacion necesaria para usuarios, fichas, aprendices, procesos academicos, procesos disciplinarios, evidencias, auditoria y notificaciones.</p>
+        </div>
+        <div class="db-grid">
+          <article>
+            <h3>Usuarios y roles</h3>
+            <p>Tabla central para login, permisos, estado activo, cambio de contrasena y relacion con aprendiz, instructor, gestor, coordinador o administrador.</p>
+          </article>
+          <article>
+            <h3>Aprendices, fichas y competencias</h3>
+            <p>Relaciona la informacion academica base: documento, datos personales, ficha, programa, competencia e instructor responsable.</p>
+          </article>
+          <article>
+            <h3>Pendientes academicos</h3>
+            <p>Registra competencias no aprobadas, estado del caso, fechas limite, accion remedial, evidencias, correcciones e instancias.</p>
+          </article>
+          <article>
+            <h3>Seguimiento disciplinario</h3>
+            <p>Guarda hechos, faltas, atenciones, reincidencias, descargos, compromisos, comite y cierre del proceso disciplinario.</p>
+          </article>
+          <article>
+            <h3>Notificaciones y auditoria</h3>
+            <p>Registra notificaciones, acciones realizadas, fecha del cambio y usuario responsable.</p>
+          </article>
+          <article>
+            <h3>Uploads y soportes</h3>
+            <p>Los archivos fisicos quedan en `uploads`; la base guarda referencias, fechas, estados y relacion con cada caso.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section workflow">
+      <div class="section-heading">
+        <p class="eyebrow">Secuencia del proceso</p>
+        <h2>Flujo academico y disciplinario</h2>
+      </div>
+      <div class="timeline">
+        <article>
+          <span>1</span>
+          <h3>Registro del caso</h3>
+          <p>El instructor registra la novedad academica o disciplinaria con aprendiz, ficha, descripcion y soporte.</p>
+        </article>
+        <article>
+          <span>2</span>
+          <h3>Notificacion</h3>
+          <p>El aprendiz y el gestor reciben aviso del caso. En casos escalados tambien participa coordinacion.</p>
+        </article>
+        <article>
+          <span>3</span>
+          <h3>Respuesta</h3>
+          <p>El aprendiz firma recibido y carga evidencia, descargo o correccion dentro de la fecha limite.</p>
+        </article>
+        <article>
+          <span>4</span>
+          <h3>Revision</h3>
+          <p>El instructor, gestor o coordinador revisa evidencias y decide aprobar, corregir, escalar o cerrar.</p>
+        </article>
+        <article>
+          <span>5</span>
+          <h3>Instancia o comite</h3>
+          <p>Si no hay cumplimiento, el caso pasa a primera instancia, segunda instancia o comite segun el proceso.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="videos">
+      <div class="section-heading">
+        <p class="eyebrow">Material audiovisual</p>
+        <h2>Videos de apoyo por rol</h2>
+        <p>Videos para consultar el uso del sistema segun el rol del usuario.</p>
+      </div>
+      <div class="video-grid">
+        <article class="video-card">
+          <span>AD</span>
+          <strong>Administrador</strong>
+          <small>Crear usuarios, cambiar entorno, auditoria y reportes.</small>
+          <iframe src="https://www.youtube.com/embed/IldUt8kTmWQ" title="Video de apoyo - Administrador" allowfullscreen></iframe>
+        </article>
+        <article class="video-card">
+          <span>IN</span>
+          <strong>Instructor</strong>
+          <small>Reporte, accion remedial, evidencia y revision.</small>
+          <iframe src="https://www.youtube.com/embed/JaS0HjkgafA" title="Video de apoyo - Instructor" allowfullscreen></iframe>
+        </article>
+        <article class="video-card">
+          <span>AP</span>
+          <strong>Aprendiz</strong>
+          <small>Pendientes, firma de recibido y carga de evidencia.</small>
+          <iframe src="https://www.youtube.com/embed/DnewUtLzHJQ" title="Video de apoyo - Aprendiz" allowfullscreen></iframe>
+        </article>
+        <article class="video-card">
+          <span>GE</span>
+          <strong>Gestor</strong>
+          <small>Instancias, expediente y seguimiento del aprendiz.</small>
+          <iframe src="https://www.youtube.com/embed/Hju-lU0x_oM" title="Video de apoyo - Gestor" allowfullscreen></iframe>
+        </article>
+        <article class="video-card">
+          <span>CO</span>
+          <strong>Coordinador</strong>
+          <small>Comite, revision de casos y decisiones.</small>
+          <iframe src="https://www.youtube.com/embed/x5qRPXVWFb8" title="Video de apoyo - Coordinador" allowfullscreen></iframe>
+        </article>
+      </div>
+    </section>
+
+    <section class="section faq-section">
+      <div class="section-heading">
+        <p class="eyebrow">Ayuda</p>
+        <h2>Preguntas frecuentes</h2>
+        <p>Dudas comunes para usuarios que ingresan por primera vez al sistema.</p>
+      </div>
+      <div class="faq-grid">
+        <article>
+          <h3>Que es un pendiente?</h3>
+          <p>Es una actividad, accion remedial, descargo o compromiso que el aprendiz debe atender antes de una fecha limite.</p>
+        </article>
+        <article>
+          <h3>Que significa firmar recibido?</h3>
+          <p>Significa que el aprendiz confirma que conoce el caso o pendiente asignado. No significa que el caso este aprobado.</p>
+        </article>
+        <article>
+          <h3>Cuando se usa QA?</h3>
+          <p>QA se usa para pruebas y demostraciones. Alli se pueden simular roles sin afectar los datos reales de Produccion.</p>
+        </article>
+        <article>
+          <h3>Cuando pasa a instancia?</h3>
+          <p>Cuando el aprendiz no cumple un pendiente o cuando el caso necesita revision del gestor y coordinacion.</p>
+        </article>
+        <article>
+          <h3>Que debe revisar un instructor?</h3>
+          <p>Debe revisar la evidencia, la fecha de entrega y el cumplimiento de la accion remedial. Luego aprueba, solicita correccion o rechaza.</p>
+        </article>
+        <article>
+          <h3>Que se debe respaldar?</h3>
+          <p>La base de datos, la carpeta del proyecto y la carpeta `uploads`, donde se guardan evidencias, soportes y fotos.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span>Hecho en el SENA Regional Caldas</span>
+    <strong>Yeral Esmid Garcia</strong>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
