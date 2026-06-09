@@ -728,13 +728,21 @@ h3 {
   color: #8a5b00;
 }
 
-.video-card iframe {
-  width: 100%;
+.video-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 40px;
   margin-top: 8px;
-  aspect-ratio: 16 / 9;
-  background: #061611;
-  border: 1px solid var(--line);
+  padding: 10px 14px;
+  background: var(--green);
+  color: #fff;
   border-radius: 8px;
+  font-weight: 800;
+}
+
+.video-link:hover {
+  background: #065d31;
 }
 
 .footer {
